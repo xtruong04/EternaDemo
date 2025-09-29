@@ -108,3 +108,4 @@ D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.dll
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.pdb
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.init.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.GenerateResource.cache
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatemodel.resources
