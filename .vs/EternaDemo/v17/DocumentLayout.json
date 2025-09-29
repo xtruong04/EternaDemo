@@ -1,0 +1,652 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\WEB\\EternaDemo\\EternaDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\migrations\\202509281458452_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\migrations\\202509281458452_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\gemstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\gemstone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\productvariant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\models\\metal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\metal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\productimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\wishlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\wishlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\app_start\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\app_start\\identityconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|d:\\web\\eternademo\\eternademo\\eternademo\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\category\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\shared\\_layoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\home\\testlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\home\\testlayoutpage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\content\\clientpage\\assets\\css\\util.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\content\\clientpage\\assets\\css\\util.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\content\\clientpage\\assets\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\content\\clientpage\\assets\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\shared\\_layoutclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\shared\\_layoutclient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|D:\\WEB\\EternaDemo\\EternaDemo\\eternademo\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{5D7AA3E7-F69E-47B3-98D7-7935F5D5CDE2}|EternaDemo\\EternaDemo.csproj|solutionrelative:eternademo\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "202509281458452_init.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Migrations\\202509281458452_init.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Migrations\\202509281458452_init.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Migrations\\202509281458452_init.cs",
+              "RelativeToolTip": "EternaDemo\\Migrations\\202509281458452_init.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAQwLIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T14:58:49.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Product.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Product.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Product.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T08:03:59.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductVariant.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ProductVariant.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\ProductVariant.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ProductVariant.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\ProductVariant.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T12:25:07.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IdentityModels.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\IdentityModels.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\IdentityModels.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\IdentityModels.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\IdentityModels.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAuwFoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T08:36:57.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManageViewModels.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ManageViewModels.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\ManageViewModels.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ManageViewModels.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\ManageViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:00:41.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Certificate.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Certificate.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Certificate.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Certificate.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Certificate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:09:22.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Category.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Category.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T07:52:40.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Gemstone.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Gemstone.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Gemstone.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Gemstone.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Gemstone.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwBYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:14:21.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Metal.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Metal.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Metal.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Metal.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Metal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T12:39:12.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductImage.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ProductImage.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\ProductImage.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\ProductImage.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\ProductImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:16:54.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Migrations\\Configuration.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Migrations\\Configuration.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Migrations\\Configuration.cs",
+              "RelativeToolTip": "EternaDemo\\Migrations\\Configuration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T14:13:46.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Web.config",
+              "RelativeDocumentMoniker": "EternaDemo\\Web.config",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Web.config",
+              "RelativeToolTip": "EternaDemo\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-18T08:34:22.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\OrderItem.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\OrderItem.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwBQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:19:54.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Order.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Order.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Order.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwDIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:18:51.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WishlistItem.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\WishlistItem.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\WishlistItem.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\WishlistItem.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\WishlistItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:21:17.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Address.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\Address.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\Address.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\Address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:18:22.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\CartItem.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\CartItem.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwBIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:20:49.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AccountViewModels.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\AccountViewModels.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Models\\AccountViewModels.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Models\\AccountViewModels.cs",
+              "RelativeToolTip": "EternaDemo\\Models\\AccountViewModels.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAA6wGUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:00:46.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IdentityConfig.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\App_Start\\IdentityConfig.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\App_Start\\IdentityConfig.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\App_Start\\IdentityConfig.cs",
+              "RelativeToolTip": "EternaDemo\\App_Start\\IdentityConfig.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAADwv0gAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T09:46:40.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Category\\Index.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T02:03:43.271Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "EternaDemo\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T08:51:50.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "EternaDemo\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T10:20:49.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:28:31.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "TestLayoutPage.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\TestLayoutPage.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Home\\TestLayoutPage.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\TestLayoutPage.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Home\\TestLayoutPage.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:27:42.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "EternaDemo\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "EternaDemo\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T10:31:17.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Edit.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Category\\Edit.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Edit.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Category\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T02:11:28.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Category\\Create.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Category\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T02:15:32.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:38:23.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:03:46.164Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_LayoutPage.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LayoutPage.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Shared\\_LayoutPage.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LayoutPage.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Shared\\_LayoutPage.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAUwEwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:24:12.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "main.css",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Content\\clientpage\\assets\\css\\main.css",
+              "RelativeDocumentMoniker": "EternaDemo\\Content\\clientpage\\assets\\css\\main.css",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Content\\clientpage\\assets\\css\\main.css",
+              "RelativeToolTip": "EternaDemo\\Content\\clientpage\\assets\\css\\main.css",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-22T11:31:32.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "util.css",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Content\\clientpage\\assets\\css\\util.css",
+              "RelativeDocumentMoniker": "EternaDemo\\Content\\clientpage\\assets\\css\\util.css",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Content\\clientpage\\assets\\css\\util.css",
+              "RelativeToolTip": "EternaDemo\\Content\\clientpage\\assets\\css\\util.css",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-22T11:31:43.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "_LayoutClient.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LayoutClient.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Shared\\_LayoutClient.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LayoutClient.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Shared\\_LayoutClient.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:03:31.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Home\\About.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T11:14:15.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T11:14:13.905Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "EternaDemo\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "EternaDemo\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-22T10:03:53.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "DocumentMoniker": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\favicon.ico",
+              "RelativeDocumentMoniker": "EternaDemo\\favicon.ico",
+              "ToolTip": "D:\\WEB\\EternaDemo\\EternaDemo\\EternaDemo\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "RelativeToolTip": "EternaDemo\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2025-09-22T10:28:36.552Z",
+              "EditorCaption": " - Icon [16x16, 32 bit, BMP]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
