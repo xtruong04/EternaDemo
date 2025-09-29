@@ -93,10 +93,10 @@ namespace EternaDemo.Models
                 .WillCascadeOnDelete(true);
 
             // Product ↔ Gemstone (1-1)
-            modelBuilder.Entity<Product>()
-                .HasRequired(p => p.Gemstone)
-                .WithRequiredPrincipal(g => g.Product)
-                .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Product>()
+            //    .HasRequired(p => p.Gemstone)
+            //    .WithRequiredPrincipal(g => g.Product)
+            //    .WillCascadeOnDelete(false);
 
             // Product → Certificate (1-1, Certificate thuộc Gemstone)
             modelBuilder.Entity<Product>()

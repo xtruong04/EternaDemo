@@ -18,10 +18,6 @@ namespace EternaDemo.Models
         public decimal Carat { get; set; }
         public string Origin { get; set; }
         public string Treatment { get; set; }
-        [ForeignKey("Product")]
-        public int ProductId { get; set; }
-        public virtual Product Product { get; set; }
-
         // Một viên đá quý có thể có nhiều chứng nhận
         public virtual ICollection<Certificate> Certificates { get; set; }
 
