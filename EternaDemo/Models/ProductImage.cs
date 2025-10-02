@@ -12,7 +12,6 @@ namespace EternaDemo.Models
         [Key]
         public int Id { get; set; }
         [Required] public string Url { get; set; }
-        public bool IsPrimary { get; set; }
         public string View360Url { get; set; } // link viewer 360
         [ForeignKey("Product")]
         public int ProductId { get; set; }

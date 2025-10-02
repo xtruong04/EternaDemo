@@ -17,10 +17,10 @@ namespace EternaDemo.Models
         public int OrderId { get; set; }
         public virtual Order Order { get; set; }
 
-        [ForeignKey("ProductVariant")]
+        [ForeignKey("Product")]
         [Required]
-        public int ProductVariantId { get; set; }
-        public virtual ProductVariant ProductVariant { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
 
         [Required]
         public int Quantity { get; set; }
@@ -30,5 +30,6 @@ namespace EternaDemo.Models
 
         [Column(TypeName = "decimal")]
         public decimal Subtotal { get; set; }    // = UnitPrice * Quantity
+
     }
 }

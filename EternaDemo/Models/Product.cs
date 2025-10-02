@@ -16,11 +16,16 @@ namespace EternaDemo.Models
 
         [Required, StringLength(200)]
         public string Name { get; set; }
-
+        
         [StringLength(300)]
         public string Alias { get; set; }
-
         public string Description { get; set; }
+        [Column(TypeName = "decimal")]
+        public decimal Price { get; set; }
+
+        [ForeignKey("Metal")]
+        public int MetalId { get; set; }
+        public Metal Metal { get; set; }
 
         [ForeignKey("Category")]
         public int CateId { get; set; }
@@ -35,7 +40,5 @@ namespace EternaDemo.Models
 
         // Quan hệ
         public virtual ICollection<ProductImage> ProductImages { get; set; }
-        public virtual ICollection<ProductVariant> ProductVariants { get; set; }
-
     }
 }
