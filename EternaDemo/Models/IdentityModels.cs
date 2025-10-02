@@ -41,7 +41,6 @@ namespace EternaDemo.Models
         public DbSet<WishlistItem> WishlistItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<ProductVariant> ProductVariants { get; set; }
         public DbSet<Metal> Metals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -78,11 +77,11 @@ namespace EternaDemo.Models
                 .HasForeignKey(oi => oi.OrderId)
                 .WillCascadeOnDelete(true);
 
-            // OrderItem -> ProductVariant (tắt cascade để không xóa item khi xóa product)
+            // OrderItem -> Product (tắt cascade để không xóa item khi xóa product)
             modelBuilder.Entity<OrderItem>()
-                .HasRequired(oi => oi.ProductVariant)
+                .HasRequired(oi => oi.Product)
                 .WithMany()
-                .HasForeignKey(oi => oi.ProductVariantId)
+                .HasForeignKey(oi => oi.ProductId)
                 .WillCascadeOnDelete(false);
 
             // ProductImage -> Product (tuỳ bạn muốn xóa ảnh khi xóa sản phẩm)
@@ -93,10 +92,11 @@ namespace EternaDemo.Models
                 .WillCascadeOnDelete(true);
 
             // Product ↔ Gemstone (1-1)
-            //modelBuilder.Entity<Product>()
-            //    .HasRequired(p => p.Gemstone)
-            //    .WithRequiredPrincipal(g => g.Product)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Product>()
+                .HasRequired(p => p.Gemstone)
+                .WithMany()
+                .HasForeignKey(p => p.GemstoneId)
+                .WillCascadeOnDelete(false);
 
             // Product → Certificate (1-1, Certificate thuộc Gemstone)
             modelBuilder.Entity<Product>()

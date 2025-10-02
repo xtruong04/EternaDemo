@@ -183,6 +183,14 @@
     <Compile Include="Migrations\202509291546485_updatemodel.Designer.cs">
       <DependentUpon>202509291546485_updatemodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510010448267_updatemodel1.cs" />
+    <Compile Include="Migrations\202510010448267_updatemodel1.Designer.cs">
+      <DependentUpon>202510010448267_updatemodel1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510010454154_updatemodels.cs" />
+    <Compile Include="Migrations\202510010454154_updatemodels.Designer.cs">
+      <DependentUpon>202510010454154_updatemodels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -193,7 +201,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metal.cs" />
-    <Compile Include="Models\ProductVariant.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\ProductImage.cs" />
@@ -544,9 +551,9 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutClient.cshtml" />
-    <Content Include="Views\Shared\_LayoutPage.cshtml" />
-    <Content Include="Views\Home\TestLayoutPage.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -584,6 +591,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202509291546485_updatemodel.resx">
       <DependentUpon>202509291546485_updatemodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510010448267_updatemodel1.resx">
+      <DependentUpon>202510010448267_updatemodel1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510010454154_updatemodels.resx">
+      <DependentUpon>202510010454154_updatemodels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

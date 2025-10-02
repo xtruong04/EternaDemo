@@ -14,12 +14,22 @@ namespace EternaDemo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "TestLayoutPage", id = UrlParameter.Optional }
+               name: "About",
+               url: "about",
+               defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
             );
 
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+               name: "Contact",
+               url: "contact",
+               defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+              name: "Blog",
+              url: "blog",
+              defaults: new { controller = "Home", action = "Blog", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "ListCategory", 
@@ -31,6 +41,12 @@ namespace EternaDemo
                name: "CreateCategory",
                url: "create-category",
                defaults: new { controller = "Category", action = "Create", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
