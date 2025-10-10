@@ -17,8 +17,8 @@ namespace EternaDemo.Models
         public int Id { get; set; }
 
         [Required]
-        public string UserId { get; set; }
         [ForeignKey("User")]
+        public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -34,7 +34,6 @@ namespace EternaDemo.Models
         public string TransactionId { get; set; }
         [StringLength(50)]
         public string PaymentProvider { get; set; }
-
         public int? ShippingAddressId { get; set; }
         [ForeignKey("ShippingAddress")]
         public virtual Address ShippingAddress { get; set; }
@@ -54,7 +53,6 @@ namespace EternaDemo.Models
         [StringLength(500)]
         public string GiftMessage { get; set; }
         public bool GiftWrap { get; set; }
-
         public virtual ICollection<OrderItem> Items { get; set; }
     }
 }

@@ -2697,8 +2697,8 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .bor5 {
-  border-left: 1px solid #e5e5e5;
-  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #999; /* màu xám đậm hơn */
+  border-right: 1px solid #999;
 }
 
 .bor6 {border-right: 1px solid rgba(255,255,255,0.1);}

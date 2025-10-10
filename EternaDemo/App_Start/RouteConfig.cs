@@ -14,10 +14,16 @@ namespace EternaDemo
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-               name: "About",
-               url: "about",
-               defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
-            );
+                 name: "ProductByCateID",
+                 url: "product-by-category-{cateID}",
+                 defaults: new { controller = "Shop", action = "Index", id = UrlParameter.Optional }
+             );
+
+            routes.MapRoute(
+              name: "About",
+              url: "about",
+              defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                name: "Contact",

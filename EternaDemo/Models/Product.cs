@@ -20,16 +20,18 @@ namespace EternaDemo.Models
         [StringLength(300)]
         public string Alias { get; set; }
         public string Description { get; set; }
+        public bool IsFeatured { get; set; }
+
         [Column(TypeName = "decimal")]
         public decimal Price { get; set; }
 
         [ForeignKey("Metal")]
         public int MetalId { get; set; }
-        public Metal Metal { get; set; }
+        public virtual Metal Metal { get; set; }
 
         [ForeignKey("Category")]
         public int CateId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
         [ForeignKey("Gemstone")]
         public int GemstoneId { get; set; }
