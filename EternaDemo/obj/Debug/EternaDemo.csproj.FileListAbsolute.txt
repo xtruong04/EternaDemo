@@ -108,6 +108,6 @@ D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.dll
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.pdb
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.init.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.GenerateResource.cache
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatemodel.resources
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatemodel1.resources
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatemodels.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatemetals.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updateproducts1.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updateproducts2.resources

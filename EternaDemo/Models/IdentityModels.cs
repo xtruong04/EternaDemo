@@ -13,7 +13,6 @@ namespace EternaDemo.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual ICollection<Address> Addresses { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -46,15 +45,6 @@ namespace EternaDemo.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Ngắt cascade để tránh multiple cascade paths
-
-            // Order -> User
-            modelBuilder.Entity<Order>()
-                .HasRequired(o => o.User)
-                .WithMany(u => u.Orders)
-                .HasForeignKey(o => o.UserId)
-                .WillCascadeOnDelete(false);
 
             // Address -> User
             modelBuilder.Entity<Address>()

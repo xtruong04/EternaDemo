@@ -168,36 +168,42 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202509281458452_init.cs" />
-    <Compile Include="Migrations\202509281458452_init.Designer.cs">
-      <DependentUpon>202509281458452_init.cs</DependentUpon>
+    <Compile Include="Migrations\202510090706497_init.cs" />
+    <Compile Include="Migrations\202510090706497_init.Designer.cs">
+      <DependentUpon>202510090706497_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202509291546485_updatemodel.cs" />
-    <Compile Include="Migrations\202509291546485_updatemodel.Designer.cs">
-      <DependentUpon>202509291546485_updatemodel.cs</DependentUpon>
+    <Compile Include="Migrations\202510101001159_updatemetals.cs" />
+    <Compile Include="Migrations\202510101001159_updatemetals.Designer.cs">
+      <DependentUpon>202510101001159_updatemetals.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202510010448267_updatemodel1.cs" />
-    <Compile Include="Migrations\202510010448267_updatemodel1.Designer.cs">
-      <DependentUpon>202510010448267_updatemodel1.cs</DependentUpon>
+    <Compile Include="Migrations\202510101010060_updateproducts1.cs" />
+    <Compile Include="Migrations\202510101010060_updateproducts1.Designer.cs">
+      <DependentUpon>202510101010060_updateproducts1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202510010454154_updatemodels.cs" />
-    <Compile Include="Migrations\202510010454154_updatemodels.Designer.cs">
-      <DependentUpon>202510010454154_updatemodels.cs</DependentUpon>
+    <Compile Include="Migrations\202510101637558_updateproducts2.cs" />
+    <Compile Include="Migrations\202510101637558_updateproducts2.Designer.cs">
+      <DependentUpon>202510101637558_updateproducts2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AppDbContext.cs" />
+    <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\Gemstone.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Metal.cs" />
@@ -501,6 +507,8 @@
     <Content Include="Content\clientpage\assets\vendor\slick\slick-theme.scss" />
     <Content Include="Content\clientpage\assets\vendor\slick\slick.less" />
     <Content Include="Content\clientpage\assets\vendor\slick\slick.scss" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -554,9 +562,16 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\_Menu.cshtml" />
+    <Content Include="Views\Shop\Details.cshtml" />
+    <Content Include="Views\Shop\RelatedProducts.cshtml" />
+    <Content Include="Views\Shop\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -586,17 +601,17 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202509281458452_init.resx">
-      <DependentUpon>202509281458452_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202510090706497_init.resx">
+      <DependentUpon>202510090706497_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202509291546485_updatemodel.resx">
-      <DependentUpon>202509291546485_updatemodel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202510101001159_updatemetals.resx">
+      <DependentUpon>202510101001159_updatemetals.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202510010448267_updatemodel1.resx">
-      <DependentUpon>202510010448267_updatemodel1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202510101010060_updateproducts1.resx">
+      <DependentUpon>202510101010060_updateproducts1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202510010454154_updatemodels.resx">
-      <DependentUpon>202510010454154_updatemodels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202510101637558_updateproducts2.resx">
+      <DependentUpon>202510101637558_updateproducts2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
