@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 
 namespace EternaDemo.Areas.Admin
 {
@@ -17,8 +18,10 @@ namespace EternaDemo.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "EternaDemo.Areas.Admin.Controllers" }
             );
+           
         }
     }
 }

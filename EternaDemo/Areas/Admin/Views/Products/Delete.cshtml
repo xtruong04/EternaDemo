@@ -1,0 +1,87 @@
+﻿@model EternaDemo.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-danger text-white d-flex align-items-center justify-content-between">
+            <h4 class="mb-0"><i class="bi bi-trash-fill me-2"></i> Delete Product</h4>
+            <a href="@Url.Action("Index")" class="btn btn-light btn-sm">
+                <i class="bi bi-arrow-left"></i> Back To List
+            </a>
+        </div>
+
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Are you sure you want to <strong>delete</strong> this product? This action <strong>cannot be undone</strong>.
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4 fw-bold">Name:</dt>
+                        <dd class="col-sm-8">@Model.Name</dd>
+
+                        <dt class="col-sm-4 fw-bold">Alias:</dt>
+                        <dd class="col-sm-8">@Model.Alias</dd>
+
+                        <dt class="col-sm-4 fw-bold">Price:</dt>
+                        <dd class="col-sm-8">@String.Format("{0:N0} VNĐ", Model.Price)</dd>
+
+                        <dt class="col-sm-4 fw-bold">Featured:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.IsFeatured)
+                            {
+                                <span class="badge bg-success">Yes</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">No</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4 fw-bold">Category:</dt>
+                        <dd class="col-sm-8">@Model.Category.Name</dd>
+
+                        <dt class="col-sm-4 fw-bold">Metal:</dt>
+                        <dd class="col-sm-8">@Model.Metal.Name</dd>
+
+                        <dt class="col-sm-4 fw-bold">Gemstone:</dt>
+                        <dd class="col-sm-8">@Model.Gemstone.Name</dd>
+
+                        <dt class="col-sm-4 fw-bold">Certificate:</dt>
+                        <dd class="col-sm-8">@Model.Certificate.Type</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <dl class="row">
+                <dt class="col-sm-2 fw-bold">Decription:</dt>
+                <dd class="col-sm-10 text-muted">@Html.Raw(Model.Description)</dd>
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-danger px-4 me-2">
+                        <i class="bi bi-trash"></i> Delete
+                    </button>
+                    <a href="@Url.Action("Index")" class="btn btn-outline-secondary px-4">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />

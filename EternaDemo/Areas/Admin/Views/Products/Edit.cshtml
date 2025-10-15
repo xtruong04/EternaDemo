@@ -1,0 +1,130 @@
+﻿@model EternaDemo.Models.Product
+
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4 fw-bold text-primary">Edit Product</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card shadow-sm border-0 p-4 rounded-3 bg-light">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Tên sản phẩm</label>
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", id = "Name", placeholder = "Nhập tên sản phẩm..." })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Alias</label>
+                    @Html.TextBoxFor(m => m.Alias, new { @class = "form-control", id = "Alias", @disabled = "disabled" })
+                    @Html.HiddenFor(m => m.Alias)
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label fw-semibold">Decriptons</label>
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 3, placeholder = "Decription..." })
+                    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Price (VNĐ)</label>
+                    @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Price..." } })
+                    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="form-check mt-4">
+                        @Html.CheckBoxFor(m => m.IsFeatured, new { @class = "form-check-input", @id = "IsFeatured" })
+                        <label class="form-check-label ms-1 fw-semibold" for="IsFeatured">IsFeatured</label>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Metal</label>
+                    @Html.DropDownList("MetalId", null, "-- Select Metal --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.MetalId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Category</label>
+                    @Html.DropDownList("CateId", null, "-- Select Category --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.CateId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Gemstone</label>
+                    @Html.DropDownList("GemstoneId", null, "-- Select Gemstone --", new { @class = "form-select", @id = "GemstoneId" })
+                    @Html.ValidationMessageFor(m => m.GemstoneId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Certificate</label>
+                    @Html.DropDownList("CertificateId", null, "-- Chọn chứng nhận --", new { @class = "form-select", @id = "CertificateId" })
+                    @Html.ValidationMessageFor(m => m.CertificateId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-4">
+                <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back To List
+                </a>
+                <button type="submit" class="btn btn-primary px-4">
+                    <i class="bi bi-save"></i> Save
+                </button>
+            </div>
+        </div>
+    }
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("Alias auto-generator loaded ✅");
+
+            function toAlias(str) {
+                return str.toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // bỏ dấu
+                    .replace(/đ/g, 'd').replace(/Đ/g, 'd')
+                    .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+                    .trim()
+                    .replace(/\s+/g, '-') // thay khoảng trắng = -
+                    .replace(/-+/g, '-'); // tránh trùng dấu -
+            }
+
+            // Khi nhập tên → tự động sinh alias
+            $('#Name').on('input', function () {
+                const name = $(this).val();
+                const alias = toAlias(name);
+                $('#Alias').val(alias);
+                $('input[name="Alias"]').val(alias); // <--- thêm dòng này
+            });
+        });
+        // 🔹 (Tuỳ chọn) Tự động load chứng nhận theo đá quý
+        $('#GemstoneId').on('change', function () {
+            var gemstoneId = $(this).val();
+            if (gemstoneId) {
+                $.ajax({
+                    url: '/Admin/Products/GetCertificatesByGemstone',
+                    type: 'GET',
+                    data: { gemstoneId: gemstoneId },
+                    success: function (data) {
+                        var certSelect = $('#CertificateId');
+                        certSelect.empty().append('<option value="">-- Chọn chứng nhận --</option>');
+                        $.each(data, function (i, item) {
+                            certSelect.append(`<option value="${item.Id}">${item.Name}</option>`);
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+}

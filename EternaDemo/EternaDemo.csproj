@@ -170,10 +170,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CertificateController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GemstoneController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MetalController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,12 +201,15 @@
     <Compile Include="Migrations\202510101637558_updateproducts2.Designer.cs">
       <DependentUpon>202510101637558_updateproducts2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510131705179_UpdateDatabase.cs" />
+    <Compile Include="Migrations\202510131705179_UpdateDatabase.Designer.cs">
+      <DependentUpon>202510131705179_UpdateDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\AppDbContext.cs" />
     <Compile Include="Models\Blog.cs" />
-    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\Gemstone.cs" />
@@ -509,6 +519,37 @@
     <Content Include="Content\clientpage\assets\vendor\slick\slick.scss" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Gemstone\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Gemstone\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Gemstone\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Gemstone\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Gemstone\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Metal\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Metal\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Metal\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Metal\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Metal\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificate\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificate\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificate\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificate\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificate\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -554,11 +595,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Category\Create.cshtml" />
-    <Content Include="Views\Category\Delete.cshtml" />
-    <Content Include="Views\Category\Details.cshtml" />
-    <Content Include="Views\Category\Edit.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Blog.cshtml" />
@@ -567,11 +603,13 @@
     <Content Include="Views\Shop\Details.cshtml" />
     <Content Include="Views\Shop\RelatedProducts.cshtml" />
     <Content Include="Views\Shop\ShoppingCart.cshtml" />
+    <Content Include="Views\Cart\_CartPartial.cshtml" />
+    <Content Include="Views\Products\_QuickView.cshtml" />
+    <Content Include="Views\Products\GetDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -612,6 +650,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510101637558_updateproducts2.resx">
       <DependentUpon>202510101637558_updateproducts2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510131705179_UpdateDatabase.resx">
+      <DependentUpon>202510131705179_UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,109 +8,114 @@ using System.Web;
 using System.Web.Mvc;
 using EternaDemo.Models;
 
-namespace EternaDemo.Controllers
+namespace EternaDemo.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    public class CertificateController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Category
+        // GET: Admin/Certificate
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            var certificates = db.Certificates.Include(c => c.Gemstone);
+            return View(certificates.ToList());
         }
 
-        // GET: Category/Details/5
+        // GET: Admin/Certificate/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Certificate certificate = db.Certificates.Find(id);
+            if (certificate == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(certificate);
         }
 
-        // GET: Category/Create
+        // GET: Admin/Certificate/Create
         public ActionResult Create()
         {
+            ViewBag.GemstoneId = new SelectList(db.Gemstones, "Id", "Name");
             return View();
         }
 
-        // POST: Category/Create
+        // POST: Admin/Certificate/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Description")] Category category)
+        public ActionResult Create([Bind(Include = "Id,Type,Number,IssueDate,FileUrl,GemstoneId")] Certificate certificate)
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
+                db.Certificates.Add(certificate);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(category);
+            ViewBag.GemstoneId = new SelectList(db.Gemstones, "Id", "Name", certificate.GemstoneId);
+            return View(certificate);
         }
 
-        // GET: Category/Edit/5
+        // GET: Admin/Certificate/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Certificate certificate = db.Certificates.Find(id);
+            if (certificate == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            ViewBag.GemstoneId = new SelectList(db.Gemstones, "Id", "Name", certificate.GemstoneId);
+            return View(certificate);
         }
 
-        // POST: Category/Edit/5
+        // POST: Admin/Certificate/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Description")] Category category)
+        public ActionResult Edit([Bind(Include = "Id,Type,Number,IssueDate,FileUrl,GemstoneId")] Certificate certificate)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
+                db.Entry(certificate).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(category);
+            ViewBag.GemstoneId = new SelectList(db.Gemstones, "Id", "Name", certificate.GemstoneId);
+            return View(certificate);
         }
 
-        // GET: Category/Delete/5
+        // GET: Admin/Certificate/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
-            if (category == null)
+            Certificate certificate = db.Certificates.Find(id);
+            if (certificate == null)
             {
                 return HttpNotFound();
             }
-            return View(category);
+            return View(certificate);
         }
 
-        // POST: Category/Delete/5
+        // POST: Admin/Certificate/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
+            Certificate certificate = db.Certificates.Find(id);
+            db.Certificates.Remove(certificate);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

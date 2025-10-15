@@ -1,0 +1,142 @@
+﻿@model EternaDemo.Models.Product
+
+@{
+    ViewBag.Title = "Create Product";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+                <i class="bi bi-plus-circle"></i> Create New Product
+            </h4>
+            <a href="@Url.Action("Index")" class="btn btn-light btn-sm">
+                <i class="bi bi-arrow-left"></i> Back To List
+            </a>
+        </div>
+
+        <div class="card-body px-4 py-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Name</label>
+                    @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", @id = "Name", placeholder = "Name.." } })
+                    @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Alias</label>
+                    @Html.EditorFor(m => m.Alias, new { htmlAttributes = new { @class = "form-control", @id = "Alias", @readonly = "readonly", placeholder = "(alias)" } })
+                    @Html.ValidationMessageFor(m => m.Alias, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Decriptions</label>
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 3, placeholder = "Decriptions..." })
+                    @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Price (vn₫)</label>
+                    @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control", placeholder = "Ex: 1500000" } })
+                    @Html.ValidationMessageFor(m => m.Price, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Category</label>
+                    @Html.DropDownList("CateId", null, "-- Select Category --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.CateId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Metal</label>
+                    @Html.DropDownList("MetalId", null, "-- Select Metal --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.MetalId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Gemstone</label>
+                    @Html.DropDownList("GemstoneId", null, "-- Select Gemston --", new { @class = "form-select", id = "GemstoneId" })
+                    @Html.ValidationMessageFor(m => m.GemstoneId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Certificate</label>
+                    @Html.DropDownList("CertificateId", null, "-- Auto Show --", new { @class = "form-select", id = "CertificateId", @disabled = "disabled" })
+                    @Html.HiddenFor(m => m.CertificateId, new { id = "CertificateIdHidden" })
+                    @Html.ValidationMessageFor(m => m.CertificateId, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="form-check mt-3">
+                        @Html.CheckBoxFor(m => m.IsFeatured, new { @class = "form-check-input" })
+                        <label class="form-check-label fw-semibold">IsFeatured</label>
+                    </div>
+                    @Html.ValidationMessageFor(m => m.IsFeatured, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+                <div class="mt-5 text-end">
+                    <button type="submit" class="btn btn-primary px-4">
+                        <i class="bi bi-save"></i> Save
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $('#GemstoneId').change(function () {
+                var gemstoneId = $(this).val();
+                var $certificate = $('#CertificateId');
+
+                if (gemstoneId) {
+                    $.getJSON('@Url.Action("GetCertificateByGemstone", "Products", new { area = "Admin" })', { gemstoneId: gemstoneId },
+                        function (data) {
+                        if (data) {
+                            $certificate
+                                .html('<option value="' + data.id + '">' + data.name + '</option>')
+                                .prop('disabled', false); // bật chọn
+                            $('#CertificateIdHidden').val(data.id); // lưu ẩn
+                        } else {
+                            $certificate
+                                .html('<option>Không có chứng nhận</option>')
+                                .prop('disabled', true);
+                            $('#CertificateIdHidden').val('');
+                        }
+                    });
+                } else {
+                    $certificate
+                        .html('<option>-- Chưa chọn đá quý --</option>')
+                        .prop('disabled', true);
+                    $('#CertificateIdHidden').val('');
+                }
+            });
+        });
+    </script>
+    <script>
+        function toAlias(str) {
+            return str
+                .toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // bỏ dấu tiếng Việt
+                .replace(/đ/g, 'd')
+                .replace(/[^a-z0-9\s-]/g, '') // bỏ ký tự đặc biệt
+                .trim()
+                .replace(/\s+/g, '-') // thay khoảng trắng bằng dấu gạch ngang
+                .replace(/-+/g, '-'); // gộp nhiều dấu '-'
+        }
+
+        $('#Name').on('input', function () {
+            var name = $(this).val();
+            $('#Alias').val(toAlias(name));
+        });
+    </script>
+}

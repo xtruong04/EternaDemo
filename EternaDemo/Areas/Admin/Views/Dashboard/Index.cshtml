@@ -1,0 +1,125 @@
+﻿
+@model IEnumerable<EternaDemo.Models.Order>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+<div class="container-fluid py-4">
+    <h2 class="fw-bold text-primary mb-4">
+        <i class="bi bi-speedometer2"></i> Dashboard
+    </h2>
+
+    <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <div class="text-primary fs-1 mb-2"><i class="bi bi-box-seam"></i></div>
+                    <h5 class="fw-semibold">Product</h5>
+                    <h3 class="fw-bold text-dark">@ViewBag.TotalProducts</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <div class="text-success fs-1 mb-2"><i class="bi bi-grid"></i></div>
+                    <h5 class="fw-semibold">Category</h5>
+                    <h3 class="fw-bold text-dark">@ViewBag.TotalCategories</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <div class="text-info fs-1 mb-2"><i class="bi bi-people"></i></div>
+                    <h5 class="fw-semibold">User</h5>
+                    <h3 class="fw-bold text-dark">@ViewBag.TotalUsers</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <div class="text-danger fs-1 mb-2"><i class="bi bi-receipt"></i></div>
+                    <h5 class="fw-semibold">Order</h5>
+                    <h3 class="fw-bold text-dark">@ViewBag.TotalOrders</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-md-3">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body text-center">
+                    <div class="text-info fs-1 mb-2"><i class="bi bi-gem"></i></div>
+                    <h5 class="fw-semibold">Gemstone</h5>
+                    <h3 class="fw-bold text-dark">@ViewBag.TotalGemstone</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-header bg-primary text-white fw-semibold">
+                    <i class="bi bi-graph-up"></i> Thống kê doanh thu (demo)
+                </div>
+                <div class="card-body">
+                    <canvas id="revenueChart" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-header bg-secondary text-white fw-semibold">
+                    <i class="bi bi-bell"></i> Thông báo gần đây
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-3"><i class="bi bi-check-circle text-success"></i> Đã thêm 3 sản phẩm mới</li>
+                        <li class="mb-3"><i class="bi bi-person-plus text-info"></i> Người dùng mới đăng ký</li>
+                        <li class="mb-3"><i class="bi bi-receipt-cutoff text-warning"></i> 5 đơn hàng đang chờ xử lý</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('revenueChart');
+        const labels = @Html.Raw(Json.Encode(ViewBag.RevenueLabels));
+        const values = @Html.Raw(Json.Encode(ViewBag.RevenueValues));
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Doanh thu (VND)',
+                    data: values,
+                    borderWidth: 3,
+                    borderColor: '#0d6efd',
+                    tension: 0.3,
+                    fill: true,
+                    backgroundColor: 'rgba(13,110,253,0.1)'
+                }]
+            },
+            options: {
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    </script>
+}
