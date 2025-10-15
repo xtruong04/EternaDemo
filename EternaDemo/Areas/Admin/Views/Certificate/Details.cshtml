@@ -1,0 +1,84 @@
+﻿@model EternaDemo.Models.Certificate
+
+@{
+    ViewBag.Title = "Certificate Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center rounded-top-4">
+            <h4 class="mb-0">
+                <i class="bi bi-file-earmark-text me-2"></i> Certificate Details
+            </h4>
+            <div>
+                <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-light btn-sm me-2">
+                    <i class="bi bi-pencil-square me-1"></i> Edit
+                </a>
+                <a href="@Url.Action("Index")" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-arrow-left"></i> Back
+                </a>
+            </div>
+        </div>
+
+        <div class="card-body bg-light">
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+                        <h6 class="text-muted mb-2">
+                            <i class="bi bi-gem"></i> Gemstone
+                        </h6>
+                        <p class="fw-semibold mb-0 text-dark">@Model.Gemstone.Name</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+                        <h6 class="text-muted mb-2">
+                            <i class="bi bi-type"></i> Type
+                        </h6>
+                        <p class="fw-semibold mb-0 text-dark">@Model.Type</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+                        <h6 class="text-muted mb-2">
+                            <i class="bi bi-hash"></i> Number
+                        </h6>
+                        <p class="fw-semibold mb-0 text-dark">@Model.Number</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+                        <h6 class="text-muted mb-2">
+                            <i class="bi bi-calendar-event"></i> Issue Date
+                        </h6>
+                        <p class="fw-semibold mb-0 text-dark">
+                            @Model.IssueDate.ToString("dd/MM/yyyy")
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="p-3 bg-white rounded-3 shadow-sm h-100">
+                        <h6 class="text-muted mb-2">
+                            <i class="bi bi-file-earmark-arrow-up"></i> File
+                        </h6>
+                        @if (!string.IsNullOrEmpty(Model.FileUrl))
+                        {
+                            <a href="@Model.FileUrl" target="_blank" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> View Certificate
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="text-muted fst-italic">No file available</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

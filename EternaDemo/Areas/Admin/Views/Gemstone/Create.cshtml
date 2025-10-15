@@ -1,0 +1,76 @@
+﻿@model EternaDemo.Models.Gemstone
+
+@{
+    ViewBag.Title = "Create Gemstone";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">
+            <i class="bi bi-gem me-2"></i>Create New Gemstone
+        </h4>
+        <a href="@Url.Action("Index")" class="btn btn-light btn-sm">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Name, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Enter gemstone name..." })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Cut, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Cut, new { @class = "form-control", placeholder = "e.g., Round, Oval..." })
+                @Html.ValidationMessageFor(m => m.Cut, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Clarity, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Clarity, new { @class = "form-control", placeholder = "e.g., VS1, IF..." })
+                @Html.ValidationMessageFor(m => m.Clarity, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Color, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Color, new { @class = "form-control", placeholder = "e.g., D, E, F..." })
+                @Html.ValidationMessageFor(m => m.Color, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Carat, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Carat, new { @class = "form-control", placeholder = "Enter carat weight..." })
+                @Html.ValidationMessageFor(m => m.Carat, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Origin, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Origin, new { @class = "form-control", placeholder = "e.g., Burma, Sri Lanka..." })
+                @Html.ValidationMessageFor(m => m.Origin, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="mb-3">
+                @Html.LabelFor(m => m.Treatment, new { @class = "form-label fw-bold" })
+                @Html.TextBoxFor(m => m.Treatment, new { @class = "form-control", placeholder = "e.g., Heat, None..." })
+                @Html.ValidationMessageFor(m => m.Treatment, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-check-circle"></i> Save
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-secondary ms-2">
+                    <i class="bi bi-x-circle"></i> Cancel
+                </a>
+            </div>
+        }
+    </div>
+</div>

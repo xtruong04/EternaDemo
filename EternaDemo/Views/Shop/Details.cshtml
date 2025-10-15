@@ -7,12 +7,12 @@
 <!-- breadcrumb -->
 <div class="container">
     <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-        <a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+        <a href="@Url.Action("Index", "Shop")" class="stext-109 cl8 hov-cl1 trans-04">
             Home
             <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
         </a>
 
-        <a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+        <a href="@Url.Action("Index", "Shop")" class="stext-109 cl8 hov-cl1 trans-04">
             @Model.Category.Name
             <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
         </a>
@@ -68,13 +68,13 @@
                             @Model.Alias
                         </p>*@
                     <p class="stext-102 cl3 p-t-23">
-                        @Model.Metal.Name
+                        Metal: @Model.Metal.Name
                     </p>
                     <p class="stext-102 cl3 p-t-23">
-                        @Model.Gemstone.Name
+                        Gemstone: @Model.Gemstone.Name
                     </p>
                     <p class="stext-102 cl3 p-t-23">
-                        @Model.Certificate.Type
+                        Certificate: @Model.Certificate.Type
                     </p>
 
                     <!--  -->
@@ -131,9 +131,13 @@
                                     </div>
                                 </div>
 
-                                <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
-                                    Add to cart
-                                </button>
+                                <form action="/Cart/AddToCart" method="post">
+                                    <input type="hidden" name="productId" value="@Model.Id" />
+                                    <input type="number" name="quantity" value="1" min="1" class="form-control w-25 mb-2" />
+                                    <button type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                                        Add to cart
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -341,11 +345,7 @@
         <span class="stext-107 cl6 p-lr-25">
             SKU: @Model.Alias
         </span>
-
-        @*<span class="stext-107 cl6 p-lr-25">
-                    @Model.Category.Name
-                </span>
-            </div>*@
+    </div>
 </section>
 
 

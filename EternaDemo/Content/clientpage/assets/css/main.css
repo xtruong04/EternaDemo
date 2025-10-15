@@ -1897,8 +1897,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .show-modal1 {
-  visibility: visible;
-  opacity: 1;
+    display: flex !important;
+    visibility: visible;
+    opacity: 1;
 }
 
 /*//////////////////////////////////////////////////////////////////

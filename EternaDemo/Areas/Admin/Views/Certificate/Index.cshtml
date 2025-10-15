@@ -1,0 +1,89 @@
+﻿@model IEnumerable<EternaDemo.Models.Certificate>
+
+@{
+    ViewBag.Title = "Certificates";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="bi bi-award-fill"></i> List Certificates
+        </h2>
+        @Html.ActionLink("➕ Add Certificate Gemstone", "Create", null, new { @class = "btn btn-success fw-semibold" })
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-0">
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info text-center m-0 py-4">
+                    <i class="bi bi-info-circle me-2"></i>No certificates found.
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped mb-0 align-middle">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Gemstone</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Number</th>
+                                <th scope="col">Issue Date</th>
+                                <th scope="col">File</th>
+                                <th scope="col" class="text-center" style="width: 180px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Gemstone.Name</td>
+                                    <td>@item.Type</td>
+                                    <td>@item.Number</td>
+                                    <td>@item.IssueDate.ToShortDateString()</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(item.FileUrl))
+                                        {
+                                            var ext = System.IO.Path.GetExtension(item.FileUrl).ToLower();
+                                            if (ext == ".jpg" || ext == ".png" || ext == ".jpeg" || ext == ".gif")
+                                            {
+                                                <img src="@item.FileUrl" alt="Certificate Image" class="img-thumbnail" style="width: 80px; height: 80px; object-fit: cover;" />
+                                            }
+                                            else if (ext == ".pdf")
+                                            {
+                                                <a href="@item.FileUrl" target="_blank" class="btn btn-sm btn-outline-secondary">
+                                                    <i class="bi bi-file-earmark-pdf"></i> View PDF
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a href="@item.FileUrl" target="_blank">@item.FileUrl</a>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted fst-italic">No file</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-primary me-1">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-info me-1 text-white">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+﻿@model EternaDemo.Models.Gemstone
+
+@{
+    ViewBag.Title = "Edit Gemstone";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="bi bi-pencil-square"></i> Edit Gemstone
+        </h2>
+        <a href="@Url.Action("Index")" class="btn btn-outline-secondary fw-semibold">
+            <i class="bi bi-arrow-left-circle me-1"></i> Back to List
+        </a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card shadow-sm border-0 rounded-4">
+            <div class="card-body p-4">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Name</label>
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter gemstone name..." } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Cut</label>
+                        @Html.EditorFor(model => model.Cut, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter cut type..." } })
+                        @Html.ValidationMessageFor(model => model.Cut, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Clarity</label>
+                        @Html.EditorFor(model => model.Clarity, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter clarity grade..." } })
+                        @Html.ValidationMessageFor(model => model.Clarity, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Color</label>
+                        @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter gemstone color..." } })
+                        @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Carat</label>
+                        @Html.EditorFor(model => model.Carat, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter carat weight..." } })
+                        @Html.ValidationMessageFor(model => model.Carat, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Origin</label>
+                        @Html.EditorFor(model => model.Origin, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter origin..." } })
+                        @Html.ValidationMessageFor(model => model.Origin, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label fw-semibold">Treatment</label>
+                        @Html.EditorFor(model => model.Treatment, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter treatment details..." } })
+                        @Html.ValidationMessageFor(model => model.Treatment, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end mt-4">
+                    <button type="submit" class="btn btn-primary px-4 fw-semibold">
+                        <i class="bi bi-save me-1"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

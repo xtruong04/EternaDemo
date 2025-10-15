@@ -1,0 +1,41 @@
+﻿@model EternaDemo.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0"><i class="bi bi-info-circle"></i> Details</h4>
+            <a href="@Url.Action("Index", "Category", new { area = "Admin" })" class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+        </div>
+
+        <div class="card-body px-5 py-4">
+            <dl class="row mb-0">
+                <dt class="col-sm-3 fw-semibold text-secondary">
+                    <i class="bi bi-tag"></i> Name
+                </dt>
+                <dd class="col-sm-9 fs-5">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold text-secondary">
+                    <i class="bi bi-card-text"></i> Decriptions
+                </dt>
+                <dd class="col-sm-9 fs-5">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="card-footer bg-light d-flex justify-content-end gap-2">
+            <a href="@Url.Action("Edit", "Category", new { id = Model.Id, area = "Admin" })" class="btn btn-warning text-white">
+                <i class="bi bi-pencil"></i> Edit
+            </a>
+        </div>
+    </div>
+</div>

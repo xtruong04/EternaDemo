@@ -1,0 +1,55 @@
+﻿@model EternaDemo.Models.Metal
+
+@{
+    ViewBag.Title = "Delete Metal";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container py-5">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">
+                <i class="bi bi-trash"></i> Delete Metal
+            </h4>
+            <a href="@Url.Action("Index", "Metal", new { area = "Admin" })" class="btn btn-light btn-sm fw-semibold">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+        </div>
+
+        <div class="card-body px-5 py-4">
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+                <div>
+                    Are you sure you want to <strong>delete</strong> this metal?
+                    This action <strong>cannot be undone</strong>.
+                </div>
+            </div>
+
+            <dl class="row mb-0">
+                <dt class="col-sm-3 fw-semibold text-secondary">
+                    <i class="bi bi-gem"></i> Name
+                </dt>
+                <dd class="col-sm-9 fs-5">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3 fw-semibold text-secondary">
+                    <i class="bi bi-percent"></i> Purity
+                </dt>
+                <dd class="col-sm-9 fs-5">
+                    @Html.DisplayFor(model => model.Purity)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="card-footer bg-light d-flex justify-content-end gap-2">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-danger fw-semibold">
+                    <i class="bi bi-trash"></i> Delete
+                </button>
+            }
+        </div>
+    </div>
+</div>

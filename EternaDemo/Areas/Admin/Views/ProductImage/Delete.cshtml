@@ -1,0 +1,69 @@
+﻿@model EternaDemo.Models.ProductImage
+
+@{
+    ViewBag.Title = "Delete Product Image";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">
+            <i class="bi bi-trash-fill me-2"></i> Delete Product Image
+        </h4>
+        <a href="@Url.Action("Index")" class="btn btn-light btn-sm">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
+    </div>
+
+    <div class="card-body">
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <div>
+                Are you sure you want to <strong>delete</strong> this image?
+                This action <strong>cannot be undone</strong>.
+            </div>
+        </div>
+
+        <dl class="row">
+            <dt class="col-sm-3">Product Name</dt>
+            <dd class="col-sm-9">@Model.Product.Name</dd>
+
+            <dt class="col-sm-3">Image</dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.Url))
+                {
+                    <img src="@Url.Content(Model.Url)" alt="Product Image" class="img-fluid rounded border" style="max-width: 250px;" />
+                }
+                else
+                {
+                    <span class="text-muted">No image available</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">360° View</dt>
+            <dd class="col-sm-9">
+                @if (!string.IsNullOrEmpty(Model.View360Url))
+                {
+                    <iframe src="@Model.View360Url" width="400" height="250" allowfullscreen class="rounded border"></iframe>
+                }
+                else
+                {
+                    <span class="text-muted">No 360° view available</span>
+                }
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="text-end mt-4">
+                <button type="submit" class="btn btn-danger">
+                    <i class="bi bi-trash-fill"></i> Delete
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-secondary ms-2">
+                    <i class="bi bi-x-circle"></i> Cancel
+                </a>
+            </div>
+        }
+    </div>
+</div>
