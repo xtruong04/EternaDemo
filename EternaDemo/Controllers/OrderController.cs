@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using EternaDemo.Models;
 using Microsoft.AspNet.Identity;
 
-namespace EternaDemo.Areas.User.Controllers
+namespace EternaDemo.Controllers
 {
     public class OrderController : Controller
     {
@@ -28,7 +28,6 @@ namespace EternaDemo.Areas.User.Controllers
             var userId = User.Identity.GetUserId();
             var order = db.Orders
                 .Include("Items.Product")
-                .Include("ShippingAddress")
                 .FirstOrDefault(o => o.Id == id && o.UserId == userId);
 
             if (order == null)

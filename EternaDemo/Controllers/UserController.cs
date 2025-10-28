@@ -43,7 +43,7 @@ namespace EternaDemo.Controllers
             {
                 user.FullName = model.FullName;
                 user.PhoneNumber = model.PhoneNumber;
-                user.Addresses = model.Addresses; // ✅ Gán đúng cách
+                user.SelectedAddressId = model.SelectedAddressId;
                 db.SaveChanges();
                 TempData["Message"] = "Profile updated successfully!";
                 return RedirectToAction("UserProfile");

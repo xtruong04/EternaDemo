@@ -1,59 +1,139 @@
-﻿@model IEnumerable<EternaDemo.Models.OrderItem>
+﻿@model EternaDemo.Models.Order
 
 @{
-    ViewBag.Title = "OrderDetails";
+    ViewBag.Title = "Order Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>OrderDetails</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Order.UserId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UnitPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subtotal)
-        </th>
-        <th></th>
-    </tr>
+<div class="container mt-5">
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="card-header bg-gold text-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0"><i class="bi bi-receipt-cutoff me-2"></i> Order Details</h4>
+            <a href="@Url.Action("Index", "Order")" class="btn btn-light btn-sm rounded-pill">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+        </div>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subtotal)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <dl class="row">
+                        <dt class="col-sm-4">Order ID:</dt>
+                        <dd class="col-sm-8">#@Model.Id</dd>
+
+                        <dt class="col-sm-4">Date:</dt>
+                        <dd class="col-sm-8">@Model.CreatedAt.ToLocalTime().ToString("dd/MM/yyyy HH:mm")</dd>
+
+                        <dt class="col-sm-4">Status:</dt>
+                        <dd class="col-sm-8">
+                            @switch (Model.Status)
+                            {
+                                case EternaDemo.Models.Order.OrderStatus.Pending:
+                                    <span class="badge bg-warning text-dark">@Model.Status</span>; break;
+                                case EternaDemo.Models.Order.OrderStatus.Processing:
+                                    <span class="badge bg-info text-dark">@Model.Status</span>; break;
+                                case EternaDemo.Models.Order.OrderStatus.Shipped:
+                                    <span class="badge bg-primary">@Model.Status</span>; break;
+                                case EternaDemo.Models.Order.OrderStatus.Delivered:
+                                    <span class="badge bg-success">@Model.Status</span>; break;
+                                default:
+                                    <span class="badge bg-secondary">@Model.Status</span>; break;
+                            }
+                        </dd>
+
+                        <dt class="col-sm-4">Payment:</dt>
+                        <dd class="col-sm-8">
+                            @if (Model.PaymentStatus == EternaDemo.Models.Order.PaymentState.Paid)
+                            {
+                                <span class="badge bg-success">Paid</span>
+                            }
+                            else if (Model.PaymentStatus == EternaDemo.Models.Order.PaymentState.Refunded)
+                            {
+                                <span class="badge bg-secondary">Refunded</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger">Unpaid</span>
+                            }
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="col-md-6">
+                    <p class="mb-1"><strong>Full Name:</strong> @Model.User.FullName</p>
+                    <p class="mb-1"><strong>Phone:</strong> @Model.User.PhoneNumber</p>
+                    @if (Model.User?.SelectedAddress != null)
+                    {
+                        <p class="mb-1"><strong>Street:</strong> @Model.User.SelectedAddress.Street</p>
+                        <p class="mb-0">
+                            <strong>City:</strong> @Model.User.SelectedAddress.City@(string.IsNullOrEmpty(Model.User.SelectedAddress.District) ? "" : ", " + Model.User.SelectedAddress.District)
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="mb-1 text-muted">No address selected</p>
+                    }
+                </div>
+            </div>
+
+            <h5 class="fw-bold mb-3">Items</h5>
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Product</th>
+                            <th class="text-center">Quantity</th>
+                            <th class="text-end">Unit Price</th>
+                            <th class="text-end">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="@item.Product.ProductImages.FirstOrDefault().Url" alt="product" width="60" class="rounded me-2" />
+                                        <div>
+                                            <strong>@item.Product.Name</strong><br />
+                                            <small class="text-muted">@item.Product.Category.Name</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">@item.Quantity</td>
+                                <td class="text-end">@item.UnitPrice.ToString("#,##0") VND</td>
+                                <td class="text-end fw-bold">@((item.Quantity * item.UnitPrice).ToString("#,##0")) VND</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-end mt-4">
+                <div class="text-end">
+                    @{
+                        // Tính subtotal trực tiếp từ Items
+                        var subtotal = Model.Items != null ? Model.Items.Sum(x => x.UnitPrice * x.Quantity) : 0;
+                        var shippingFee = Model.ShippingFee; // Lấy từ DB luôn
+                        var total = subtotal + shippingFee;
+                    }
+                    <p class="mb-1">Subtotal: <strong>@subtotal.ToString("#,##0") VND</strong></p>
+                    <p class="mb-1">Shipping: <strong>@shippingFee.ToString("#,##0") VND</strong></p>
+                    <h5 class="mt-2">Total: <span class="text-gold fw-bold">@total.ToString("#,##0") VND</span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-gold {
+        background-color: #c89b3c;
     }
 
-</table>
+    .text-gold {
+        color: #c89b3c;
+    }
+</style>
