@@ -236,6 +236,22 @@
     <Compile Include="Migrations\202510280425380_RemoveApplicationUsersDbSet.Designer.cs">
       <DependentUpon>202510280425380_RemoveApplicationUsersDbSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510281452400_SyncModelWithDatabase.cs" />
+    <Compile Include="Migrations\202510281452400_SyncModelWithDatabase.Designer.cs">
+      <DependentUpon>202510281452400_SyncModelWithDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510281519413_upadateorder_product.cs" />
+    <Compile Include="Migrations\202510281519413_upadateorder_product.Designer.cs">
+      <DependentUpon>202510281519413_upadateorder_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510281541279_upadateaddress.cs" />
+    <Compile Include="Migrations\202510281541279_upadateaddress.Designer.cs">
+      <DependentUpon>202510281541279_upadateaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510281542450_upadateaddress2.cs" />
+    <Compile Include="Migrations\202510281542450_upadateaddress2.Designer.cs">
+      <DependentUpon>202510281542450_upadateaddress2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -638,9 +654,10 @@
     <Content Include="Views\Products\GetDetail.cshtml" />
     <Content Include="Views\User\EditProfile.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
-    <Content Include="Views\Address\Addresses.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\OrderDetails.cshtml" />
+    <Content Include="Views\Address\AddAddress.cshtml" />
+    <Content Include="Views\Address\EditAddress.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -709,6 +726,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510280425380_RemoveApplicationUsersDbSet.resx">
       <DependentUpon>202510280425380_RemoveApplicationUsersDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281452400_SyncModelWithDatabase.resx">
+      <DependentUpon>202510281452400_SyncModelWithDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281519413_upadateorder_product.resx">
+      <DependentUpon>202510281519413_upadateorder_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281541279_upadateaddress.resx">
+      <DependentUpon>202510281541279_upadateaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281542450_upadateaddress2.resx">
+      <DependentUpon>202510281542450_upadateaddress2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

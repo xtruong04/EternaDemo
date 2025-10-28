@@ -1,7 +1,9 @@
 ﻿@model EternaDemo.Models.Address
 
 @{
-    ViewBag.Title = "Add New Address";
+    ViewBag.Title = "Edit Address";
+    // Đảm bảo Layout được thiết lập nếu bạn muốn sử dụng các kiểu CSS chung
+    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
@@ -65,14 +67,22 @@
     <div class="card address-card">
         <div class="card-header address-header">
             <h4 class="mb-0">
-                <i class="bi bi-geo-alt me-2"></i>Add New Address
+                <i class="bi bi-pencil-square me-2"></i>Edit Address
             </h4>
         </div>
 
         <div class="card-body p-4">
-            @using (Html.BeginForm("AddAddress", "Address", FormMethod.Post))
+            @using (Html.BeginForm("EditAddress", "Address", FormMethod.Post))
             {
                 @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @* Phải có HiddenFor Id để Controller biết đang chỉnh sửa bản ghi nào *@
+                @Html.HiddenFor(model => model.Id)
+
+                @* Phải có HiddenFor UserId để Controller có thể lưu nó lại mà không cần tìm lại *@
+                @Html.HiddenFor(model => model.UserId)
+
 
                 <div class="mb-3">
                     <label class="form-label">Street</label>
@@ -82,7 +92,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">District</label>
-                    @Html.TextBoxFor(m => m.District, new { @class = "form-control", placeholder = "e.g. 123 Lê Lợi Street..." })
+                    @Html.TextBoxFor(m => m.District, new { @class = "form-control", placeholder = "e.g. Quận 1" })
                     @Html.ValidationMessageFor(m => m.District, "", new { @class = "text-danger" })
                 </div>
 
@@ -94,20 +104,23 @@
 
                 <div class="mb-3">
                     <label class="form-label">Zip Code</label>
-                    @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", placeholder = "e.g. ZipCode" })
+                    @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", placeholder = "e.g. 70000" })
                     @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger" })
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Country</label>
-                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "e.g. Country" })
+                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "e.g. Vietnam" })
                     @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
                 </div>
+
+                @* Nút EDIT/SAVE *@
                 <button type="submit" class="btn btn-gold w-100 mt-2">
-                    <i class="bi bi-check2-circle me-2"></i>Save Address
+                    <i class="bi bi-pencil-fill me-2"></i>**Update Address**
                 </button>
 
                 <div class="text-center mt-3">
+                    @* Quay lại trang hồ sơ (EditProfile) *@
                     <a href="@Url.Action("EditProfile", "User")" class="btn btn-outline-gold px-4">
                         <i class="bi bi-arrow-left me-2"></i>Back to Profile
                     </a>

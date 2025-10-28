@@ -63,7 +63,7 @@ namespace EternaDemo.Controllers
                 {
                     address.Street = model.Street;
                     address.City = model.City;
-                    address.Districts = model.Districts;
+                    address.District = model.District;
                     address.ZipCode = model.ZipCode;
                     address.Country = model.Country;
 

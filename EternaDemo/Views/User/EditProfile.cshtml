@@ -107,31 +107,31 @@
                 </div>
 
                 <!-- Địa chỉ -->
-                <div class="mb-3">
-                    <label class="form-label">Address</label>
-                    @if (Model.Addresses != null && Model.Addresses.Any())
+        <div class="mb-3">
+            <label class="form-label">Address</label>
+            @if (Model.Addresses != null && Model.Addresses.Any())
+            {
+                <select class="form-select mb-2" name="SelectedAddressId">
+                    @foreach (var addr in Model.Addresses)
                     {
-                        <select class="form-select mb-2" name="SelectedAddressId">
-                            @foreach (var addr in Model.Addresses)
-                            {
-                                @*<option value="@addr.Id" @(Model.SelectedAddressId == addr.Id ? "selected" : "")>
-                                    @addr.Street, @addr.City
-                                </option>*@
-                            }
-                        </select>
+                        <option value="@addr.Id" @(Model.SelectedAddressId == addr.Id ? "selected" : "")>
+                            @addr.Street, @addr.City
+                        </option>
+                    }
+                </select>
 
-                        <a href="@Url.Action("AddAddress", "Address")" class="btn btn-sm btn-outline-gold">
-                            <i class="bi bi-plus-circle me-1"></i> Add New Address
-                        </a>
-                    }
-                    else
-                    {
-                        <p class="text-muted fst-italic mb-2">You have no saved addresses.</p>
-                        <a href="@Url.Action("AddAddress", "Address")" class="btn btn-sm btn-outline-gold">
-                            <i class="bi bi-plus-circle me-1"></i> Add New Address
-                        </a>
-                    }
-                </div>
+                <a href="@Url.Action("AddAddress", "Address")" class="btn btn-sm btn-outline-gold">
+                    <i class="bi bi-plus-circle me-1"></i> Add New Address
+                </a>
+            }
+            else
+            {
+                <p class="text-muted fst-italic mb-2">You have no saved addresses.</p>
+                <a href="@Url.Action("AddAddress", "Address")" class="btn btn-sm btn-outline-gold">
+                    <i class="bi bi-plus-circle me-1"></i> Add New Address
+                </a>
+            }
+        </div>
 
                 <button type="submit" class="btn btn-gold w-100 mt-3">
                     <i class="bi bi-check2-circle me-2"></i>Save Changes

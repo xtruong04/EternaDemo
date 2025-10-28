@@ -57,13 +57,6 @@ namespace EternaDemo.Models
                 .HasForeignKey(a => a.UserId)
                 .WillCascadeOnDelete(false);
 
-            // Order -> Address
-            modelBuilder.Entity<Order>()
-                .HasRequired(o => o.ShippingAddress)
-                .WithMany()
-                .HasForeignKey(o => o.ShippingAddressId)
-                .WillCascadeOnDelete(false);
-
             // OrderItem -> Order (cho phép cascade khi xóa Order)
             modelBuilder.Entity<OrderItem>()
                 .HasRequired(oi => oi.Order)

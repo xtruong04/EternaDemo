@@ -42,5 +42,6 @@ namespace EternaDemo.Models
 
         // Quan hệ
         public virtual ICollection<ProductImage> ProductImages { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
     }
 }

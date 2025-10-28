@@ -10,7 +10,7 @@ namespace EternaDemo.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly AppDbContext db = new AppDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             try

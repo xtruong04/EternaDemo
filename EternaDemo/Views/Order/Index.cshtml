@@ -64,7 +64,9 @@
                                         <span class="badge bg-danger">Unpaid</span>
                                     }
                                 </td>
-                                <td><strong>$@order.Total.ToString("N2")</strong></td>
+                                <td>
+                                    <strong>@(order.Items != null ? (order.Items.Sum(x => x.Subtotal)+order.ShippingFee).ToString("#,##0") + " VND" : "0 VND")</strong>
+                                </td>
                                 <td>
                                     <a href="@Url.Action("OrderDetails", "Order", new { id = order.Id })"
                                        class="btn btn-sm btn-outline-gold">

@@ -34,9 +34,9 @@ namespace EternaDemo.Models
         public string TransactionId { get; set; }
         [StringLength(50)]
         public string PaymentProvider { get; set; }
-        public int? ShippingAddressId { get; set; }
-        [ForeignKey("ShippingAddress")]
-        public virtual Address ShippingAddress { get; set; }
+        [ForeignKey("Address")]
+        public int? AddressId { get; set; }
+        public virtual Address Address { get; set; }
 
         [Column(TypeName = "decimal")]
         public decimal Subtotal { get; set; }
