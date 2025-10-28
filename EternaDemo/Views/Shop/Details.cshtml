@@ -76,71 +76,36 @@
                     <p class="stext-102 cl3 p-t-23">
                         Certificate: @Model.Certificate.Type
                     </p>
+                <div class="flex-w flex-r-m p-b-10">
+                    <div class="size-204 flex-w flex-m respon6-next">
+                        <form class="add-to-cart-form" action="/Cart/AddToCart" method="post">
+                            <div class="wrap-num-product flex-w m-r-20 m-tb-10">
+                                <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
+                                    <i class="fs-16 zmdi zmdi-minus"></i>
+                                </div>
 
-                    <!--  -->
-                    <div class="p-t-33">
-                        <div class="flex-w flex-r-m p-b-10">
-                            <div class="size-203 flex-c-m respon6">
-                                Size
-                            </div>
+                                <input class="mtext-104 cl3 txt-center num-product"
+                                       type="number"
+                                       name="quantity"
+                                       value="1"
+                                       min="1">
 
-                            <div class="size-204 respon6-next">
-                                <div class="rs1-select2 bor8 bg0">
-                                    <select class="js-select2" name="time">
-                                        <option>Choose an option</option>
-                                        <option>Size 7</option>
-                                        <option>Size 8</option>
-                                        <option>Size 9</option>
-                                        <option>Size 10</option>
-                                    </select>
-                                    <div class="dropDownSelect2"></div>
+                                <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
+                                    <i class="fs-16 zmdi zmdi-plus"></i>
                                 </div>
                             </div>
-                        </div>
 
-                        @*<div class="flex-w flex-r-m p-b-10">
-                                <div class="size-203 flex-c-m respon6">
-                                    Color
-                                </div>
+                            <input type="hidden" name="productId" value="@Model.Id" />
 
-                                <div class="size-204 respon6-next">
-                                    <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Choose an option</option>
-                                            <option>Red</option>
-                                            <option>Blue</option>
-                                            <option>White</option>
-                                            <option>Grey</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                </div>
-                            </div>*@
-
-                        <div class="flex-w flex-r-m p-b-10">
-                            <div class="size-204 flex-w flex-m respon6-next">
-                                <div class="wrap-num-product flex-w m-r-20 m-tb-10">
-                                    <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                        <i class="fs-16 zmdi zmdi-minus"></i>
-                                    </div>
-
-                                    <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product" value="1">
-
-                                    <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                        <i class="fs-16 zmdi zmdi-plus"></i>
-                                    </div>
-                                </div>
-
-                                <form action="/Cart/AddToCart" method="post">
-                                    <input type="hidden" name="productId" value="@Model.Id" />
-                                    <input type="number" name="quantity" value="1" min="1" class="form-control w-25 mb-2" />
-                                    <button type="submit" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                                        Add to cart
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+                            <button type="submit"
+                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 add-to-cart"
+                                    data-id="@Model.Id">
+                                Add to cart
+                            </button>
+                        </form>
                     </div>
+                </div>
+                </div>
 
                     <!--  -->
                     <div class="flex-w flex-m p-l-100 p-t-40 respon7">
@@ -201,52 +166,32 @@
                             <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
                                 <ul class="p-lr-28 p-lr-15-sm">
                                     <li class="flex-w flex-t p-b-7">
-                                        <span class="stext-102 cl3 size-205">
+                                        <span class="stext-102 cl3 size-206">
                                             Metal: @Model.Metal.Name
                                         </span>
 
-                                        <span class="stext-102 cl6 size-206">
+                                        <span class="stext-102 cl6 size-205">
                                             @Model.Metal.Purity
                                         </span>
                                     </li>
 
                                     <li class="flex-w flex-t p-b-7">
-                                        <span class="stext-102 cl3 size-205">
+                                        <span class="stext-102 cl3 size-206">
                                             Gemstone: @Model.Gemstone.Name
                                         </span>
 
-                                        <span class="stext-102 cl6 size-206">
+                                        <span class="stext-102 cl6 size-205">
                                             @Model.Gemstone.Carat Carat
                                         </span>
                                     </li>
 
                                     <li class="flex-w flex-t p-b-7">
-                                        <span class="stext-102 cl3 size-205">
+                                        <span class="stext-102 cl3 size-206">
                                             Certificate: @Model.Certificate.Type
                                         </span>
 
-                                        <span class="stext-102 cl6 size-206">
+                                        <span class="stext-102 cl6 size-205">
                                             @Model.Certificate.Number
-                                        </span>
-                                    </li>
-
-                                    @*<li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">
-                                                Color
-                                            </span>
-
-                                            <span class="stext-102 cl6 size-206">
-                                                Black, Blue, Grey, Green, Red, White
-                                            </span>
-                                        </li>*@
-
-                                    <li class="flex-w flex-t p-b-7">
-                                        <span class="stext-102 cl3 size-205">
-                                            Size
-                                        </span>
-
-                                        <span class="stext-102 cl6 size-206">
-                                            7, 8, 9, 10
                                         </span>
                                     </li>
                                 </ul>
@@ -339,13 +284,44 @@
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
         <span class="stext-107 cl6 p-lr-25">
             SKU: @Model.Alias
         </span>
     </div>
+    <script>
+        $(document).on('submit', '.add-to-cart-form', function (e) {
+            e.preventDefault();
+            var form = $(this);
+
+            $.ajax({ 
+                url: form.attr('action'),
+                type: 'POST',
+                data: form.serialize(),
+                success: function (response) {
+                    if (response.success) {
+                        // Cập nhật số trên icon giỏ hàng
+                        $('.icon-header-noti').attr('data-notify', response.count);
+
+                        // Thông báo nhỏ
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Đã thêm vào giỏ hàng!',
+                            timer: 1000,
+                            showConfirmButton: false
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: response.message,
+                        });
+                    }
+                }
+            });
+        });
+
+    </script>
 </section>
 
 

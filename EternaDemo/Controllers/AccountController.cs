@@ -79,7 +79,7 @@ namespace EternaDemo.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("UserProfile", "User");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -422,7 +422,6 @@ namespace EternaDemo.Controllers
 
             base.Dispose(disposing);
         }
-
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

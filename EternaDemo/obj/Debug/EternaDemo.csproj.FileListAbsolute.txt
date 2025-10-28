@@ -112,3 +112,10 @@ D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.CoreCompileI
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.Up2Date
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.dll
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.pdb
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.updatefullname.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.deleteshippingaddress.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.addshippingaddress.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.deletedphoneaddress.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.adddistrict.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.AddSelectedAddressToUser.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.RemoveApplicationUsersDbSet.resources

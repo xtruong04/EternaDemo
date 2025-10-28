@@ -1,0 +1,118 @@
+﻿@model EternaDemo.Models.Address
+
+@{
+    ViewBag.Title = "Add New Address";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f9f9f9;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .address-card {
+        border-radius: 20px;
+        border: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        margin-top: 120px;
+    }
+
+    .address-header {
+        background-color: #c89b3c;
+        color: #fff;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        padding: 10px 12px;
+    }
+
+    .btn-gold {
+        background-color: #c89b3c;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+        .btn-gold:hover {
+            background-color: #b68a32;
+        }
+
+    .btn-outline-gold {
+        border: 1px solid #c89b3c;
+        color: #c89b3c;
+        border-radius: 25px;
+        transition: 0.3s;
+    }
+
+        .btn-outline-gold:hover {
+            background-color: #c89b3c;
+            color: #fff;
+        }
+
+    .form-label {
+        font-weight: 500;
+    }
+</style>
+
+<div class="container" style="max-width: 700px;">
+    <div class="card address-card">
+        <div class="card-header address-header">
+            <h4 class="mb-0">
+                <i class="bi bi-geo-alt me-2"></i>Add New Address
+            </h4>
+        </div>
+
+        <div class="card-body p-4">
+            @using (Html.BeginForm("AddAddress", "Address", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label class="form-label">Street</label>
+                    @Html.TextBoxFor(m => m.Street, new { @class = "form-control", placeholder = "e.g. 123 Lê Lợi Street..." })
+                    @Html.ValidationMessageFor(m => m.Street, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">District</label>
+                    @Html.TextBoxFor(m => m.District, new { @class = "form-control", placeholder = "e.g. 123 Lê Lợi Street..." })
+                    @Html.ValidationMessageFor(m => m.District, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City</label>
+                    @Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "e.g. Ho Chi Minh City" })
+                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Zip Code</label>
+                    @Html.TextBoxFor(m => m.ZipCode, new { @class = "form-control", placeholder = "e.g. ZipCode" })
+                    @Html.ValidationMessageFor(m => m.ZipCode, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Country</label>
+                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control", placeholder = "e.g. Country" })
+                    @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+                </div>
+                <button type="submit" class="btn btn-gold w-100 mt-2">
+                    <i class="bi bi-check2-circle me-2"></i>Save Address
+                </button>
+
+                <div class="text-center mt-3">
+                    <a href="@Url.Action("EditProfile", "User")" class="btn btn-outline-gold px-4">
+                        <i class="bi bi-arrow-left me-2"></i>Back to Profile
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

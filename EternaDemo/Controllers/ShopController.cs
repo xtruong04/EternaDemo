@@ -10,7 +10,7 @@ namespace EternaDemo.Controllers
 {
     public class ShopController : Controller
     {
-        AppDbContext db = new AppDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         //GET: Shop
         public ActionResult Index(int? cateID)
         {
@@ -78,7 +78,52 @@ namespace EternaDemo.Controllers
         }
         public ActionResult ShoppingCart()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+
+            if (string.IsNullOrEmpty(userId))
+                return RedirectToAction("Login", "Account");
+
+            var order = db.Orders
+                .Include("Items.Product.ProductImages")
+                .FirstOrDefault(o => o.UserId == userId && o.Status == Order.OrderStatus.Pending);
+
+            var items = order?.Items ?? new List<OrderItem>();
+
+            return View(items); // ✅ truyền model sang view
+        }
+        [HttpPost]
+        public ActionResult UpdateCart(List<CartUpdateModel> items)
+        {
+            var userId = User.Identity.GetUserId();
+            if (string.IsNullOrEmpty(userId))
+                return Json(new { success = false, message = "Bạn cần đăng nhập để cập nhật giỏ hàng." });
+
+            var order = db.Orders
+                .Include("Items.Product")
+                .FirstOrDefault(o => o.UserId == userId && o.Status == Order.OrderStatus.Pending);
+
+            if (order == null)
+                return Json(new { success = false, message = "Không tìm thấy giỏ hàng." });
+
+            foreach (var item in items)
+            {
+                var existingItem = order.Items.FirstOrDefault(i => i.Id == item.ItemId);
+                if (existingItem != null)
+                {
+                    existingItem.Quantity = item.Quantity;
+                    existingItem.Subtotal = existingItem.Quantity * existingItem.UnitPrice;
+                }
+            }
+
+            db.SaveChanges();
+
+            var total = order.Items.Sum(i => i.Subtotal);
+            return Json(new { success = true, total = total.ToString("#,##0") + " VND" });
+        }
+        public class CartUpdateModel
+        {
+            public int ItemId { get; set; }
+            public int Quantity { get; set; }
         }
     }
 }
