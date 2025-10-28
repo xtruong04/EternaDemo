@@ -13,9 +13,11 @@ namespace EternaDemo.Models
         public int Id { get; set; }
         [Required] public string Street { get; set; }
         [Required] public string City { get; set; }
+        [Required] public string Districts { get; set; }
         [Required] public string ZipCode { get; set; }
         [Required] public string Country { get; set; }
-        public string Phone { get; set; }
+        [Required] public string District { get; set; }
+
         [ForeignKey("User")]
         [Required] public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }

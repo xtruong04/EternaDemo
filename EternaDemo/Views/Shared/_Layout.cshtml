@@ -189,6 +189,10 @@
                     $("#exampleModal").show();
                     $(".modal-backdrop.fade.show").show();
                     $("#exampleModal").html(data)
+                    // 🔥 Gắn sự kiện sau khi nội dung đã được load vào modal
+                    $("#exampleModal").find(".js-hide-modal1").on("click", function () {
+                        CloseModal();
+                    });
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     // This function is executed if the request fails
@@ -203,10 +207,10 @@
         }
         function CloseModal() {
             $("#exampleModal").hide();
-            $(".modal-backdrop.fade.show").hide();
+            $(".modal-backdrop.fade.show").show();
             // thì thêm đoạn này để đảm bảo scroll luôn được bật lại khi hide()
             $('body').removeClass('modal-open');
-            $('.modal-backdrop').remove();
+            $('.modal-backdrop').hide();
             $('body').css('overflow', 'auto');
         }
     </script>
@@ -228,7 +232,70 @@
         </script>*@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
     </div>
+    <!-- Cart -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            // Bắt sự kiện submit form AddToCart
+            $(document).on('submit', '.add-to-cart-form', function (e) {
+                e.preventDefault(); // Ngăn reload trang
+
+                var form = $(this);
+
+                $.ajax({
+                    url: form.attr('action'),
+                    type: 'POST',
+                    data: form.serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            // Cập nhật số trên icon giỏ hàng
+                            $('.icon-header-noti').attr('data-notify', response.count);
+
+                            // Hiển thị thông báo
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Add To Cart Success!',
+                                showConfirmButton: false,
+                                timer: 1000
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: response.message,
+                                showCancelButton: true,
+                                confirmButtonText: 'Đăng nhập',
+                                cancelButtonText: 'Hủy',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    // Chuyển sang trang login của ASP.NET Identity
+                                    window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                                }
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error!'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            updateCartCount(); // ✅ luôn gọi khi load trang
+
+            function updateCartCount() {
+                $.get('/Cart/GetCartCount', function (data) {
+                    if (data && data.count >= 0) {
+                        $('.icon-header-noti').attr('data-notify', data.count);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

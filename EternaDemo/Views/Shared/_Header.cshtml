@@ -174,13 +174,14 @@
                 </li>
 
                 <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
-                        My Account
+                    <a href="@Url.Action("UserProfile", "User")" class="stext-102 cl2 hov-cl1 trans-04"> 
+                    My Account 
                     </a>
+
                 </li>
 
                 <li class="p-b-13">
-                    <a href="#" class="stext-102 cl2 hov-cl1 trans-04">
+                    <a href="@Url.Action("Index", "Order")" class="stext-102 cl2 hov-cl1 trans-04">
                         Track Oder
                     </a>
                 </li>
@@ -276,3 +277,18 @@
 
 <!-- Cart -->
 @Html.Action("CartPartial", "Cart")
+<script>
+    function reloadMiniCart() {
+    $.ajax({
+        url: '@Url.Action("_CartPartial", "Cart")',
+        type: 'GET',
+        success: function (partialHtml) {
+            // Thay thế toàn bộ nội dung của mini-cart bằng HTML mới
+            $('.wrap-header-cart').html(partialHtml);
+        },
+        error: function (xhr, status, error) {
+            console.error("Lỗi khi tải lại mini cart:", error);
+        }
+    });
+}
+</script>

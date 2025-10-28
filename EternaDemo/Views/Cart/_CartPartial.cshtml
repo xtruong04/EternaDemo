@@ -17,7 +17,7 @@
                 {
                     <li class="header-cart-item flex-w flex-t m-b-12">
                         <div class="header-cart-item-img">
-                            <img src="@item.Product.ProductImages" alt="@item.Product.Name">
+                            <img src="@item.Product.ProductImages.FirstOrDefault().Url" alt="@item.Product.Name">
                         </div>
 
                         <div class="header-cart-item-txt p-t-8">
@@ -36,7 +36,7 @@
 
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">
-                    Total: $@Model.Sum(x => x.Subtotal)
+                    Total: @Model.Sum(x => x.Subtotal).ToString("#,##0") VND
                 </div>
 
                 <div class="header-cart-buttons flex-w w-full">
@@ -54,3 +54,19 @@
         </div>
     </div>
 </div>
+<script>
+    // Hàm này sẽ tải lại và cập nhật nội dung của giỏ hàng nhỏ gọn
+    function reloadMiniCart() {
+        $.ajax({
+            url: '@Url.Action("CartPartial", "Cart")',
+            type: 'GET',
+            success: function (partialHtml) {
+                // Thay thế HTML của giỏ hàng nhỏ bằng HTML mới
+                $('.wrap-header-cart').html(partialHtml);
+            },
+            error: function (xhr, status, error) {
+                console.error("Failed to reload mini cart:", error);
+            }
+        });
+    }
+</script>

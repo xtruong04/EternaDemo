@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EternaDemo.Models.Order>
+﻿@model IEnumerable<EternaDemo.Models.OrderItem>
 
 @{
     ViewBag.Title = "ShoppingCart";
@@ -29,59 +29,41 @@
                         <table class="table-shopping-cart">
                             <tr class="table_head">
                                 <th class="column-1">Product</th>
-                                <th class="column-2"></th>
+                                <th class="column-2">Name</th>
                                 <th class="column-3">Price</th>
                                 <th class="column-4">Quantity</th>
                                 <th class="column-5">Total</th>
                             </tr>
-                             {
-                                <tr class="table_row">
+                            @foreach (var item in Model)
+                            {
+                                <tr class="table_row" data-id="@item.Id">
                                     <td class="column-1">
                                         <div class="how-itemcart1">
-                                            <img src=awdawd alt="IMG">
+                                            <img src="@(item.Product?.ProductImages?.FirstOrDefault()?.Url)" alt="IMG-PRODUCT" />
                                         </div>
                                     </td>
-                                    <td class="column-2">Fresh Strawberries</td>
-                                    <td class="column-3">$ 36.00</td>
+                                    <td class="column-2">@(item.Product?.Name)  </td>
+                                    <td class="column-3">@item.UnitPrice.ToString("#,##0") VND</td>
                                     <td class="column-4">
                                         <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                             <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
                                                 <i class="fs-16 zmdi zmdi-minus"></i>
                                             </div>
 
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value="1">
+                                            <input class="mtext-104 cl3 txt-center num-product"
+                                                   type="number"
+                                                   name="quantity"
+                                                   value="@item.Quantity"
+                                                   min="1">
 
                                             <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                                 <i class="fs-16 zmdi zmdi-plus"></i>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="column-5">$ 36.00</td>
+                                    <td class="column-5">@((item.Quantity * item.UnitPrice).ToString("#,##0")) VND</td>
                                 </tr>
-                             }
-                            <tr class="table_row">
-                                <td class="column-1">
-                                    <div class="how-itemcart1">
-                                        <img src="images/item-cart-05.jpg" alt="IMG">
-                                    </div>
-                                </td>
-                                <td class="column-2">Lightweight Jacket</td>
-                                <td class="column-3">$ 16.00</td>
-                                <td class="column-4">
-                                    <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                        <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-minus"></i>
-                                        </div>
-
-                                        <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product2" value="1">
-
-                                        <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                            <i class="fs-16 zmdi zmdi-plus"></i>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="column-5">$ 16.00</td>
-                            </tr>
+                            }
                         </table>
                     </div>
 
@@ -93,8 +75,7 @@
                                 Apply coupon
                             </div>
                         </div>
-
-                        <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+                        <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10 update-cart-btn">
                             Update Cart
                         </div>
                     </div>
@@ -116,7 +97,7 @@
 
                         <div class="size-209">
                             <span class="mtext-110 cl2">
-                                $79.65
+                                @Model.Sum(x => x.Subtotal).ToString("#,##0") VND
                             </span>
                         </div>
                     </div>
@@ -187,3 +168,37 @@
         </div>
     </div>
 </form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(".update-cart-btn").click(function () {
+        var items = [];
+
+        $(".table_row").each(function () {
+            var id = $(this).data("id");
+            var qty = $(this).find(".num-product").val();
+
+            if (id && qty) {
+                // Sử dụng "Id" thay vì "ItemId" để ánh xạ chính xác với model C#
+                items.push({ Id: id, Quantity: parseInt(qty) });
+            }
+        });
+
+        $.ajax({
+            url: '@Url.Action("UpdateCart", "Cart")', // Chắc chắn đúng tên Controller
+            type: 'POST',
+            data: JSON.stringify({ updatedItems: items }), // Đóng gói mảng vào một đối tượng
+            contentType: 'application/json; charset=utf-8',
+            success: function (res) {
+                if (res.success) {
+                    alert("🛒 Giỏ hàng đã được cập nhật!");
+                    location.reload(); // tải lại trang để hiển thị kết quả
+                } else {
+                    alert(res.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("Đã xảy ra lỗi khi cập nhật giỏ hàng: " + error);
+            }
+        });
+    });
+</script>

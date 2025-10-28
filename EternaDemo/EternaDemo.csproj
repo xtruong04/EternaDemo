@@ -177,11 +177,14 @@
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +207,34 @@
     <Compile Include="Migrations\202510131705179_UpdateDatabase.cs" />
     <Compile Include="Migrations\202510131705179_UpdateDatabase.Designer.cs">
       <DependentUpon>202510131705179_UpdateDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510210047028_updatefullname.cs" />
+    <Compile Include="Migrations\202510210047028_updatefullname.Designer.cs">
+      <DependentUpon>202510210047028_updatefullname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510210111586_deleteshippingaddress.cs" />
+    <Compile Include="Migrations\202510210111586_deleteshippingaddress.Designer.cs">
+      <DependentUpon>202510210111586_deleteshippingaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510210113233_addshippingaddress.cs" />
+    <Compile Include="Migrations\202510210113233_addshippingaddress.Designer.cs">
+      <DependentUpon>202510210113233_addshippingaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510220358554_deletedphoneaddress.cs" />
+    <Compile Include="Migrations\202510220358554_deletedphoneaddress.Designer.cs">
+      <DependentUpon>202510220358554_deletedphoneaddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510220415029_adddistrict.cs" />
+    <Compile Include="Migrations\202510220415029_adddistrict.Designer.cs">
+      <DependentUpon>202510220415029_adddistrict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510220452395_AddSelectedAddressToUser.cs" />
+    <Compile Include="Migrations\202510220452395_AddSelectedAddressToUser.Designer.cs">
+      <DependentUpon>202510220452395_AddSelectedAddressToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510280425380_RemoveApplicationUsersDbSet.cs" />
+    <Compile Include="Migrations\202510280425380_RemoveApplicationUsersDbSet.Designer.cs">
+      <DependentUpon>202510280425380_RemoveApplicationUsersDbSet.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -604,8 +635,12 @@
     <Content Include="Views\Shop\RelatedProducts.cshtml" />
     <Content Include="Views\Shop\ShoppingCart.cshtml" />
     <Content Include="Views\Cart\_CartPartial.cshtml" />
-    <Content Include="Views\Products\_QuickView.cshtml" />
     <Content Include="Views\Products\GetDetail.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
+    <Content Include="Views\User\UserProfile.cshtml" />
+    <Content Include="Views\Address\Addresses.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\OrderDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -653,6 +688,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510131705179_UpdateDatabase.resx">
       <DependentUpon>202510131705179_UpdateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510210047028_updatefullname.resx">
+      <DependentUpon>202510210047028_updatefullname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510210111586_deleteshippingaddress.resx">
+      <DependentUpon>202510210111586_deleteshippingaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510210113233_addshippingaddress.resx">
+      <DependentUpon>202510210113233_addshippingaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510220358554_deletedphoneaddress.resx">
+      <DependentUpon>202510220358554_deletedphoneaddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510220415029_adddistrict.resx">
+      <DependentUpon>202510220415029_adddistrict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510220452395_AddSelectedAddressToUser.resx">
+      <DependentUpon>202510220452395_AddSelectedAddressToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510280425380_RemoveApplicationUsersDbSet.resx">
+      <DependentUpon>202510280425380_RemoveApplicationUsersDbSet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
