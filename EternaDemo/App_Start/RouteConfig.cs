@@ -48,6 +48,11 @@ namespace EternaDemo
                url: "create-category",
                defaults: new { controller = "Category", action = "Create", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "403",
+               url: "no-permission",
+               defaults: new { controller = "Home", action = "No403", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

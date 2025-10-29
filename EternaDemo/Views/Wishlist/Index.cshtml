@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EternaDemo.Models.WishlistItem>
+@{
+    ViewBag.Title = "My Wishlist";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">My Wishlist</h4>
+        <a href="@Url.Action("Index", "Shop")" class="btn btn-light btn-sm">Continue Shopping</a>
+    </div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <p class="text-muted text-center">You have no items in your wishlist.</p>
+        }
+        else
+        {
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@item.Product.ProductImages.FirstOrDefault().Url" alt="" width="60" class="me-2 rounded" />
+                                @Html.ActionLink(item.Product.Name, "Details", "Shop", new { id = item.Product.Id }, new { @class = "product-name-link" })
+                            </td>
+                            <td>@item.Product.Price.ToString("#,##0") VND</td>
+                            <td class="text-end">
+                                <form action="@Url.Action("Remove", "Wishlist")" method="post">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i> Remove
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

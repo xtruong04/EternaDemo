@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Access Denied";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="text-danger">🚫 Bạn không có quyền truy cập trang này!</h1>
+    <p>Vui lòng quay lại trang chủ hoặc đăng nhập bằng tài khoản có quyền quản trị.</p>
+
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary mt-3">Về trang chủ</a>
+</div>

@@ -63,5 +63,9 @@ namespace EternaDemo.Controllers
         {
             return View();
         }
+        public ActionResult No403()
+        {
+            return View();
+        }
     }
 }

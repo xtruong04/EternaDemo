@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EternaDemo.Models;
+using System.Net;
 
 namespace EternaDemo.Controllers
 {
@@ -79,7 +80,26 @@ namespace EternaDemo.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("UserProfile", "User");
+                    {
+                        // Lấy thông tin user
+                        var user = await UserManager.FindByEmailAsync(model.Email);
+
+                        // Nếu là Admin thì chuyển đến trang Admin
+                        if (await UserManager.IsInRoleAsync(user.Id, "1"))
+                        {
+                            return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+                        }
+                        else
+                        {
+                            if(returnUrl != null && returnUrl.ToLower().Contains("admin"))
+                            {
+                                return Redirect("/no-permission");
+                            }    
+                        }    
+
+                        // Ngược lại (user bình thường)
+                        return RedirectToLocal(returnUrl);
+                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
