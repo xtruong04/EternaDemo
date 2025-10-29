@@ -114,12 +114,12 @@ D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.deletedp
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.adddistrict.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.AddSelectedAddressToUser.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.RemoveApplicationUsersDbSet.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.SyncModelWithDatabase.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateorder_product.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress2.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.GenerateResource.cache
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.CoreCompileInputs.cache
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.Up2Date
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.dll
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.pdb
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.SyncModelWithDatabase.resources
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateorder_product.resources
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress.resources
-D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress2.resources

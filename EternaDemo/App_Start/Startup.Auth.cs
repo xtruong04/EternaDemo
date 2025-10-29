@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using EternaDemo.Models;
+using System.Configuration;
 
 namespace EternaDemo
 {
@@ -58,11 +59,14 @@ namespace EternaDemo
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            var googleId = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID");
+            var googleSecret = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET");
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = googleId,
+                ClientSecret = googleSecret
+            });
         }
     }
 }
