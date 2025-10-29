@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EternaDemo.Areas.Admin.Filters;
 using EternaDemo.Models;
 
 namespace EternaDemo.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

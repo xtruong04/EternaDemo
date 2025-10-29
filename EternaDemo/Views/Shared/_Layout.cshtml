@@ -297,5 +297,12 @@
             }
         });
     </script>
+    @RenderSection("scripts", required: false)
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">
+            @TempData["ErrorMessage"]
+        </div>
+    }
 </body>
 </html>
