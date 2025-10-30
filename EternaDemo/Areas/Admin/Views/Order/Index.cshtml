@@ -1,0 +1,90 @@
+﻿@using EternaDemo.Models
+@model IEnumerable<EternaDemo.Models.Order>
+
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h4 class="mb-0"><i class="fa fa-shopping-cart me-2"></i>List Order</h4>
+        <a href="@Url.Action("Create")" class="btn btn-light btn-sm">
+            <i class="fa fa-plus me-1"></i> Add Order
+        </a>
+    </div>
+
+    <div class="card-body p-0">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Customer</th>
+                    <th>Address</th>
+                    <th>Create At</th>
+                    <th>Status</th>
+                    <th>Payment</th>
+                    <th>Total</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    // Gán màu cho trạng thái đơn hàng
+                    string statusClass = "bg-secondary";
+                    string statusText = item.Status.ToString();
+
+                    switch (item.Status)
+                    {
+                        case Order.OrderStatus.Pending:
+                            statusClass = "bg-warning text-dark";
+                            break;
+                        case Order.OrderStatus.Processing:
+                            statusClass = "bg-info text-dark";
+                            break;
+                        case Order.OrderStatus.Shipped:
+                            statusClass = "bg-primary";
+                            break;
+                        case Order.OrderStatus.Delivered:
+                            statusClass = "bg-success";
+                            break;
+                        case Order.OrderStatus.CancelRequested:
+                            statusClass = "bg-dark";
+                            break;
+                        case Order.OrderStatus.Cancelled:
+                            statusClass = "bg-danger";
+                            break;
+                        case Order.OrderStatus.Refunded:
+                            statusClass = "bg-secondary";
+                            break;
+                    }
+
+                    string paymentClass = item.PaymentStatus == Order.PaymentState.Paid
+                        ? "bg-success"
+                        : item.PaymentStatus == Order.PaymentState.Refunded
+                            ? "bg-secondary"
+                            : "bg-danger";
+                    <tr>
+                        <td>@(item.User?.FullName)</td>
+                        <td>@(item.Address?.Street)</td>
+                        <td>@item.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td><span class="badge @statusClass">@statusText</span></td>
+                        <td><span class="badge @paymentClass">@item.PaymentStatus</span></td>
+                        <td>@item.Total.ToString("#,##0") đ</td>
+                        <td class="text-center">
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-primary me-1">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-info me-1 text-white">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -85,7 +85,7 @@ namespace EternaDemo.Controllers
                         var user = await UserManager.FindByEmailAsync(model.Email);
 
                         // Nếu là Admin thì chuyển đến trang Admin
-                        if (await UserManager.IsInRoleAsync(user.Id, "1"))
+                        if (await UserManager.IsInRoleAsync(user.Id, "Admin"))
                         {
                             return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
                         }
