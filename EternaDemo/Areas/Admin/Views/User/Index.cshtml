@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EternaDemo.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "User Management";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<br />
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0"><i class="bi bi-people-fill me-2"></i>User Management</h5>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0 align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Email Confirmed</th>
+                        <th>Two Factor</th>
+                        <th>Lockout</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.FullName</td>
+                                <td>@item.Email</td>
+                                <td>@item.PhoneNumber</td>
+                                <td>@(item.SelectedAddress != null ? item.SelectedAddress.Street : "—")</td>
+                                <td>
+                                    @if (item.EmailConfirmed)
+                                    {
+                                        <span class="badge bg-success">Yes</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">No</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.TwoFactorEnabled)
+                                    {
+                                        <span class="badge bg-info">Enabled</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-light text-muted">Off</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (item.LockoutEnabled)
+                                    {
+                                        <span class="badge bg-danger">Locked</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-success">Active</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-outline-info me-1" title="Details">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-outline-warning me-1" title="Edit">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-outline-danger" title="Delete"
+                                       onclick="return confirm('Are you sure you want to delete this user?');">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center text-muted py-4">No users found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
