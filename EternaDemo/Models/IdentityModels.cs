@@ -103,7 +103,5 @@ namespace EternaDemo.Models
         {
             return new ApplicationDbContext();
         }
-
-        public System.Data.Entity.DbSet<EternaDemo.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }
