@@ -118,6 +118,7 @@ D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.SyncMode
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateorder_product.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.upadateaddress2.resources
+D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.Migrations.AddAddressIdToOrders.resources
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.GenerateResource.cache
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.CoreCompileInputs.cache
 D:\WEB\EternaDemo\EternaDemo\EternaDemo\obj\Debug\EternaDemo.csproj.Up2Date

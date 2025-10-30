@@ -3,16 +3,14 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class upadateaddress2 : DbMigration
+    public partial class AddAddressIdToOrders : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Addresses", "District", c => c.String(nullable: false));
         }
-        
+
         public override void Down()
         {
-            DropColumn("dbo.Addresses", "District");
         }
     }
 }

@@ -174,6 +174,7 @@
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\GemstoneController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetalController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Filters\AdminAuthorizeAttribute.cs" />
@@ -253,6 +254,10 @@
     <Compile Include="Migrations\202510281542450_upadateaddress2.cs" />
     <Compile Include="Migrations\202510281542450_upadateaddress2.Designer.cs">
       <DependentUpon>202510281542450_upadateaddress2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202510300858291_AddAddressIdToOrders.cs" />
+    <Compile Include="Migrations\202510300858291_AddAddressIdToOrders.Designer.cs">
+      <DependentUpon>202510300858291_AddAddressIdToOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -599,6 +604,11 @@
     <Content Include="Areas\Admin\Views\Certificate\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Certificate\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Certificate\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -742,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510281542450_upadateaddress2.resx">
       <DependentUpon>202510281542450_upadateaddress2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510300858291_AddAddressIdToOrders.resx">
+      <DependentUpon>202510300858291_AddAddressIdToOrders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

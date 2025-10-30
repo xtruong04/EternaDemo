@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -83,14 +84,37 @@ namespace EternaDemo.Controllers
             if (string.IsNullOrEmpty(userId))
                 return RedirectToAction("Login", "Account");
 
+            // Lấy user và SelectedAddress (include luôn vì nó là navigation property)
+            var user = db.Users
+                .Include("SelectedAddress")
+                .FirstOrDefault(u => u.Id == userId);
+
+            // Lấy giỏ hàng của user
             var order = db.Orders
                 .Include("Items.Product.ProductImages")
                 .FirstOrDefault(o => o.UserId == userId && o.Status == Order.OrderStatus.Pending);
 
             var items = order?.Items ?? new List<OrderItem>();
 
-            return View(items); // ✅ truyền model sang view
+            // ✅ Truyền SelectedAddress qua ViewBag
+            ViewBag.SelectedAddress = user?.SelectedAddress;
+            // ✅ Tính subtotal (tổng các sản phẩm)
+            decimal subtotal = items.Sum(i => i.Quantity * i.UnitPrice);
+
+            // ✅ Lấy phí vận chuyển từ DB (nếu có)
+            decimal shippingFee = order?.ShippingFee ?? 0;
+
+            // ✅ Tính total
+            decimal total = subtotal + shippingFee;
+
+            // ✅ Truyền dữ liệu sang View
+            ViewBag.Subtotal = subtotal;
+            ViewBag.ShippingFee = shippingFee;
+            ViewBag.Total = total;
+
+            return View(items);
         }
+
         [HttpPost]
         public ActionResult UpdateCart(List<CartUpdateModel> items)
         {
